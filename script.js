@@ -130,6 +130,8 @@ url_to_head(
               ` ` +
               order_details.purchase_units[0].payments[intent_object][0].amount
                 .currency_code +
+              ` Transaction ID: ` +
+              order_details.id +
               `!</div>`;
 
             //Close out the PayPal buttons that were rendered
@@ -154,3 +156,44 @@ url_to_head(
   .catch((error) => {
     console.error(error);
   });
+
+let userData = {
+  id: 1,
+  firstName: "Edith",
+  lastName: "Benvenuto",
+  email: "edithpau_benvenuto@hotmail.com",
+  phoneNumber: "(907) 283-2799",
+  shippingAddress: {
+    country: "US",
+    state: "Alaska",
+    city: "Kenai",
+    zip: "99611",
+    street: "1523 Stellar Dr",
+  },
+};
+
+let userData_serialized = JSON.stringify(userData);
+console.log(userData_serialized);
+localStorage.setItem("userData", userData_serialized);
+
+function test() {
+  userData = {
+    id: 1,
+    firstName: document.getElementById("first-name").value,
+    lastName: document.getElementById("last-name").value,
+    email: document.getElementById("email").value,
+    phoneNumber: document.getElementById("phone").value,
+    shippingAddress: {
+      country: document.getElementById("country").value,
+      state: document.getElementById("state").value,
+      city: document.getElementById("city").value,
+      zip: document.getElementById("postal-code").value,
+      street: document.getElementById("address").value,
+    },
+  };
+  userData_serialized = JSON.stringify(userData);
+  console.log("update");
+  console.log(userData_serialized);
+
+  localStorage.setItem("userData", userData_serialized);
+}

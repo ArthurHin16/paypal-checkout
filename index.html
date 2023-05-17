@@ -14,7 +14,6 @@
   <body>
     <div class="container">
       <div class="row">
-        <div class="col-sm"></div>
         <div class="col-sm">
           <h3 class="ms-text-center">Mango</h3>
           <div id="alerts" class="ms-text-center"></div>
@@ -39,23 +38,79 @@
           </div>
         </div>
         <div class="col-sm">
-          <div class="ms-dropdown">
-            <button class="ms-btn ms-secondary ms-rounded">
-                User <i class="fas fa-sort-down"></i>
-            </button>
-            <div class="ms-dropdown-content">
-                <ul class="ms-dropdown-content-list">
-                    <li><i class="fi fas fa-sort-down">First Name</i><input value="Edith"></input></li>
-                    <li><i class="fas fa-sort-down">Last Name</i><input value="Smith"></input></li>
-                    <li><i class="fas fa-sort-down">Address</i><input value="1523 Stellar Dr"></input></li>
-                    <li><i class="fas fa-sort-down">Postal Code</i><input value="99611"></input></li>
-                    <li><i class="fas fa-sort-down">State</i><input value="AK"></input></li>
-                    <li><i class="fas fa-sort-down">City</i><input value="Kenai"></input></li>
-                    <li><i class="fas fa-sort-down">Country</i><input value="US"></input></li>
-                    <li><i class="fas fa-sort-down">email</i><input value="edithpau_benvenuto@hotmail.com"></input></li>
-                    <li><i class="fas fa-sort-down">phone</i><input value="(907) 283-2799"></input></li>
-                  </ul>
-            </div>
+          <div class="mt-5">
+            <form id="form">
+              <div class="row">
+                <div class="col-sm">
+                  <label for="first-name">First Name</label
+                  ><input
+                    id="first-name"
+                    type="text"
+                    name="first-name"
+                    value="Edith"
+                  />
+                </div>
+                <div class="col-sm">
+                  <label for="last-name">Last Name</label
+                  ><input
+                    id="last-name"
+                    type="text"
+                    name="last-name"
+                    value="Benvenuto"
+                  />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm">
+                  <label for="city">City</label
+                  ><input id="city" type="text" name="city" value="Kenai" />
+                </div>
+                <div class="col-sm">
+                  <label for="state">State</label
+                  ><input id="state" type="text" name="state" value="AK" />
+                </div>
+                <div class="col-sm">
+                  <label for="country">Country</label
+                  ><input id="country" type="text" name="country" value="US" />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm">
+                  <label for="address">Address</label
+                  ><input
+                    id="address"
+                    type="text"
+                    name="address"
+                    value="1523 Stellar Dr"
+                  />
+                </div>
+                <div class="col-sm">
+                  <label for="postal-code">Postal Code</label
+                  ><input
+                    id="postal-code"
+                    type="text"
+                    name="postal-code"
+                    value="99611"
+                  />
+                </div>
+              </div>
+              <label for="email">Email</label
+              ><input
+                id="email"
+                type="email"
+                name="email"
+                value="edithpau_benvenuto@hotmail.com"
+              />
+              <label for="phone">Phone</label
+              ><input
+                id="phone"
+                type="text"
+                name="phone"
+                value="(907) 283-2799"
+              />
+            </form>
+            <button class="ms-btn ms-action2" onclick="test()">Update</button>
+          </div>
         </div>
       </div>
     </div>
