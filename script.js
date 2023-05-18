@@ -61,7 +61,7 @@ url_to_head(
       createOrder: function (data, actions) {
         //https://developer.paypal.com/docs/api/orders/v2/#orders_create
         return fetch("http://localhost:3000/create_order", {
-          method: "post",
+          method: "POST",
           headers: { "Content-Type": "application/json; charset=utf-8" },
           body: JSON.stringify({
             intent: "CAPTURE",
@@ -192,8 +192,6 @@ function test() {
     },
   };
   userData_serialized = JSON.stringify(userData);
-  console.log("update");
   console.log(userData_serialized);
-
   localStorage.setItem("userData", userData_serialized);
 }

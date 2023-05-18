@@ -21,7 +21,29 @@ app.post("/create_order", (req, res) => {
   get_access_token()
     .then((access_token) => {
       let order_data_json = {
-        intent: req.body.intent.toUpperCase(),
+        intent: "CAPTURE",
+        payment_source: {
+          paypal: {
+            name: {
+              given_name: "Edith",
+              surname: "Benvenuto",
+            },
+            address: {
+              address_line_1: "1523 Stellar Dr",
+              postal_code: "99611",
+              country_code: "US",
+              admin_area_1: "AK",
+              admin_area_2: "Kenai",
+            },
+            email_address: "edithpau_benvenuto@hotmail.com",
+            phone: {
+              phone_type: "MOBILE",
+              phone_number: {
+                national_number: "(907) 283-2799",
+              },
+            },
+          },
+        },
         purchase_units: [
           {
             amount: {
