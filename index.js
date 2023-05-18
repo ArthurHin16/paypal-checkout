@@ -39,7 +39,7 @@ app.post("/create_order", (req, res) => {
             phone: {
               phone_type: "MOBILE",
               phone_number: {
-                national_number: "(907) 283-2799",
+                national_number: "9072832799",
               },
             },
           },
@@ -61,6 +61,7 @@ app.post("/create_order", (req, res) => {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${access_token}`,
+          "paypal-request-id": Date.now(),
         },
         body: data,
       })
