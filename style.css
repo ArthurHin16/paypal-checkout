@@ -1,3 +1,14 @@
+body {
+  background-color: #d1c2a1;
+}
+.custom-button{
+  background-color: #91aac0;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+}
 .hide {
   display: none !important;
 }
@@ -9,25 +20,6 @@
   align-items: center;
 }
 
-.div_input {
-  display: inline-block;
-  height: 40px;
-  width: 100%;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  font-size: 0.98rem;
-  background-color: rgba(var(--main-bg), 1);
-  border: 2px solid rgba(var(--default-border-color), 1);
-  border-radius: var(--default-border-radius);
-  margin: 0;
-  padding: 0 0.8rem;
-}
-
 .spinner {
   border: 8px solid rgba(0, 0, 0, 0.1);
   border-top-color: lightblue;
@@ -37,11 +29,3 @@
   animation: spin 1s ease-in-out infinite;
 }
 
-.user {
-  display: flex;
-  justify-content: right;
-}
-
-.ul {
-  list-style: none;
-}

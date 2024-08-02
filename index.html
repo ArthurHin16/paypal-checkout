@@ -1,118 +1,87 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Paypal</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/minstyle.io@2.0.1/dist/css/minstyle.io.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <script src="script.js"></script>
-  </head>
-  <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm">
-          <h3 class="ms-text-center">Mango</h3>
-          <div id="alerts" class="ms-text-center"></div>
-          <div id="loading" class="spinner-container ms-div-center">
-            <div class="spinner"></div>
+<html lang="en" style="background-color: #d1c2a1;">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PayPal</title>
+  <link href="https://cdn.jsdelivr.net/npm/minstyle.io@2.0.1/dist/css/minstyle.io.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="row" style="margin-top: 80px;">
+      <div class="col-sm">
+        <h5 class="ms-text-center">Taylor Swift 1989 (Taylor's Version)</h5>
+        <div id="alerts" class="ms-text-center"></div>
+        <div id="loading" class="spinner-container ms-div-center">
+          <div class="spinner"></div>
+        </div>
+        <div id="content" class="hide">
+          <div class="ms-card-content ms-text-center">
+            <img src="https://m.media-amazon.com/images/I/81JNBy4njYL._UF1000,1000_QL80_.jpg" alt="Taylor Swift 1989 Album" style="width: 100%; max-width: 400px;">
           </div>
-          <div id="content" class="hide">
-            <div class="ms-card-content">
-              <img
-                src="https://img.freepik.com/vector-premium/ilustracion-icono-vector-dibujos-animados-fruta-mango_480044-489.jpg?w=2000"
-                style="width: 400px"
-              />
-            </div>
-            <div class="ms-text-center pb-2">
-              <div class="ms-label ms-medium ms-action2 ms-light">
-                $2.00 USD
-              </div>
-            </div>
-            <div id="payment_options">
-              <hr />
-            </div>
+          <div class="ms-text-center pb-2">
+            <button class="custom-button">$12.89</button>
           </div>
         </div>
-        <div class="col-sm">
-          <div class="mt-5">
-            <form id="form">
-              <div class="row">
-                <div class="col-sm">
-                  <label for="first-name">First Name</label
-                  ><input
-                    id="first-name"
-                    type="text"
-                    name="first-name"
-                    value="Edith"
-                  />
-                </div>
-                <div class="col-sm">
-                  <label for="last-name">Last Name</label
-                  ><input
-                    id="last-name"
-                    type="text"
-                    name="last-name"
-                    value="Benvenuto"
-                  />
-                </div>
+      </div>
+      <div class="col-sm">
+        <h6 class="ms-text-left">Buyer’s Information</h6>
+        <div class="mt-5">
+          <form id="form">
+            <div class="row">
+              <div class="col-sm">
+                <label for="first-name">First Name</label>
+                <input id="first-name" type="text" name="first-name" value="Arturo" required>
               </div>
-              <div class="row">
-                <div class="col-sm">
-                  <label for="city">City</label
-                  ><input id="city" type="text" name="city" value="Kenai" />
-                </div>
-                <div class="col-sm">
-                  <label for="state">State</label
-                  ><input id="state" type="text" name="state" value="AK" />
-                </div>
-                <div class="col-sm">
-                  <label for="country">Country</label
-                  ><input id="country" type="text" name="country" value="US" />
-                </div>
+              <div class="col-sm">
+                <label for="last-name">Last Name</label>
+                <input id="last-name" type="text" name="last-name" value="Hinojosa" required>
               </div>
-              <div class="row">
-                <div class="col-sm">
-                  <label for="address">Address</label
-                  ><input
-                    id="address"
-                    type="text"
-                    name="address"
-                    value="1523 Stellar Dr"
-                  />
-                </div>
-                <div class="col-sm">
-                  <label for="postal-code">Postal Code</label
-                  ><input
-                    id="postal-code"
-                    type="text"
-                    name="postal-code"
-                    value="99611"
-                  />
-                </div>
+            </div>
+            <div class="row">
+              <div class="col-sm">
+                <label for="city">City</label>
+                <input id="city" type="text" name="city" value="Los Angeles" required>
               </div>
-              <label for="email">Email</label
-              ><input
-                id="email"
-                type="email"
-                name="email"
-                value="edithpau_benvenuto@hotmail.com"
-              />
-              <label for="phone">Phone</label
-              ><input
-                id="phone"
-                type="text"
-                name="phone"
-                value="(907) 283-2799"
-              />
-            </form>
-            <button class="ms-btn ms-action2" onclick="test()">Update</button>
+              <div class="col-sm">
+                <label for="state">State</label>
+                <input id="state" type="text" name="state" value="CA" required>
+              </div>
+              <div class="col-sm">
+                <label for="country">Country</label>
+                <input id="country" type="text" name="country" value="US" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm">
+                <label for="address">Address</label>
+                <input id="address" type="text" name="address" value="1234 Sunset Blvd" required>
+              </div>
+              <div class="col-sm">
+                <label for="postal-code">Postal Code</label>
+                <input id="postal-code" type="text" name="postal-code" value="90210" required>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="email">Email</label>
+              <input id="email" type="email" name="email" value="arturohin_16@outlook.com" required>
+            </div>
+            <div class="mb-3">
+              <label for="phone">Phone</label>
+              <input id="phone" type="text" name="phone" value="(213) 555-1234" required>
+            </div>
+            <div class="ms-text-center pb-2" style="margin-top: 20px;">
+              <button class="custom-button" type="button" onclick="test()">Update Information</button>
+            </div>
+          </form>
+          <div id="payment_options">
+            <hr>
           </div>
         </div>
       </div>
     </div>
-  </body>
+  </div>
+</body>
 </html>

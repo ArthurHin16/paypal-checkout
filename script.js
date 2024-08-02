@@ -1,4 +1,3 @@
-// Helper / Utility functions
 let url_to_head = (url) => {
   return new Promise(function (resolve, reject) {
     var script = document.createElement("script");
@@ -22,8 +21,7 @@ let handle_click = (event) => {
 };
 document.addEventListener("click", handle_click);
 const paypal_sdk_url = "https://www.paypal.com/sdk/js";
-const client_id =
-  "AdI4RJtuTm14GPlthGkcTGbnrX4sD29V4HuOeXVIN0nWnobOby6LMhbGCJBrJkINOGVv6vDzTuDwUu4H";
+const client_id ="AZJDAKM4jejO_ILTqfhkqvO3LrvHnUTFkHt5S0JpkfCSteOTfAhvSD6wPkRfBmsq5ZhWsnvM6l8Avhjm";
 const currency = "USD";
 const intent = "capture";
 let alerts = document.getElementById("alerts");
@@ -48,7 +46,6 @@ url_to_head(
       // https://developer.paypal.com/sdk/js/reference
       onClick: (data) => {
         // https://developer.paypal.com/sdk/js/reference/#link-oninitonclick
-        //Custom JS here
       },
       style: {
         //https://developer.paypal.com/sdk/js/reference/#link-style
@@ -68,21 +65,21 @@ url_to_head(
             payment_source: {
               paypal: {
                 name: {
-                  given_name: "Edith",
-                  surname: "Benvenuto",
+                  given_name: "Arturo",
+                  surname: "Hinojosa",
                 },
                 address: {
-                  address_line_1: "1523 Stellar Dr",
-                  postal_code: "99611",
-                  country_code: "US",
-                  admin_area_1: "AK",
-                  admin_area_2: "Kenai",
+                  "address_line_1": "1234 Sunset Blvd",
+                  "postal_code": "90210",
+                  "country_code": "US",
+                  "admin_area_1": "CA",
+                  "admin_area_2": "Los Angeles"
                 },
-                email_address: "edithpau_benvenuto@hotmail.com",
+                email_address: "arturohin_16@outlook.com",
                 phone: {
                   phone_type: "MOBILE",
                   phone_number: {
-                    national_number: "(907) 283-2799",
+                    national_number: "(213) 555-1234",
                   },
                 },
               },
@@ -91,7 +88,7 @@ url_to_head(
               {
                 amount: {
                   currency_code: "USD",
-                  value: "2.00",
+                  value: "12.89",
                 },
               },
             ],
@@ -115,12 +112,12 @@ url_to_head(
         })
           .then((response) => response.json())
           .then((order_details) => {
-            console.log(order_details); //https://developer.paypal.com/docs/api/orders/v2/#orders_capture!c=201&path=create_time&t=response
             let intent_object =
               intent === "authorize" ? "authorizations" : "captures";
             //Custom Successful Message
             alerts.innerHTML =
-              `<div class=\'ms-alert ms-action\'>Thank you ` +
+              `<div class=\'ms-alert ms-action\' style=\"background-color: #91aac0;\">
+              Thank you ` +
               order_details.payer.name.given_name +
               ` ` +
               order_details.payer.name.surname +
@@ -138,13 +135,12 @@ url_to_head(
             paypal_buttons.close();
           })
           .catch((error) => {
-            console.log(error);
-            alerts.innerHTML = `<div class="ms-alert ms-action2 ms-small"><span class="ms-close"></span><p>An Error Ocurred!</p>  </div>`;
+            alerts.innerHTML = `<div class="ms-alert ms-action2 ms-small" style="background-color: #91aac0;"><span class="ms-close"></span><p>An Error Ocurred!</p>  </div>`;
           });
       },
 
       onCancel: function (data) {
-        alerts.innerHTML = `<div class="ms-alert ms-action2 ms-small"><span class="ms-close"></span><p>Order cancelled!</p>  </div>`;
+        alerts.innerHTML = `<div class="ms-alert ms-action2 ms-small" style="background-color: #91aac0;"><span class="ms-close"></span><p>Order cancelled!</p>  </div>`;
       },
 
       onError: function (err) {
@@ -159,21 +155,20 @@ url_to_head(
 
 let userData = {
   id: 1,
-  firstName: "Edith",
-  lastName: "Benvenuto",
-  email: "edithpau_benvenuto@hotmail.com",
-  phoneNumber: "(907) 283-2799",
+  firstName: "Arturo",
+  lastName: "Hinojosa",
+  email: "arturohin_16@outlook.com",
+  phoneNumber: "(213) 555-1234",
   shippingAddress: {
     country: "US",
-    state: "Alaska",
-    city: "Kenai",
-    zip: "99611",
-    street: "1523 Stellar Dr",
+    state: "California",
+    city: "Los Angeles",
+    zip: "90210",
+    street: "1234 Sunset Blvd",
   },
 };
 
 let userData_serialized = JSON.stringify(userData);
-console.log(userData_serialized);
 localStorage.setItem("userData", userData_serialized);
 
 function test() {
@@ -192,6 +187,7 @@ function test() {
     },
   };
   userData_serialized = JSON.stringify(userData);
-  console.log(userData_serialized);
   localStorage.setItem("userData", userData_serialized);
 }
+
+
